@@ -1,0 +1,35 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        self.species = "unknown"
+
+    def speak(self):
+        print("я", self.species, "імя", self.name)
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        self.species = "собака"
+        self.breed = "unknown"
+
+    def bark(self):
+        print("гав!!!!")
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        self.species = "кот"
+        self.color = "unknown"
+
+    def meow(self):
+        print("мяв!!!")
+
+dog1 = Dog("Дудлік")
+dog1.breed = "pikines"
+dog1.speak()
+dog1.bark()
+
+cat1 = Cat("мурзік")
+cat1.color = "green-blue"
+cat1.speak()
+cat1.meow()
