@@ -1,0 +1,35 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.friends = []
+
+    def add_friend(self, friend):
+        self.friends.append(friend)
+
+class FriendGroup:
+    def __init__(self, name, members):
+        self.name = name
+        self.members = members
+
+    def print_members(self):
+        print("Members of " + self.name + ":")
+        for person in self.members:
+            print(person.name)
+
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+person3 = Person("Charlie", 35)
+
+person1.add_friend(person2)
+person1.add_friend(person3)
+
+person2.add_friend(person1)
+person2.add_friend(person3)
+
+person3.add_friend(person1)
+person3.add_friend(person2)
+
+group = FriendGroup("Best Friends", [person1, person2, person3])
+
+group.print_members()
