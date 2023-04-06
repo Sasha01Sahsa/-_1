@@ -1,0 +1,17 @@
+result = []
+def divider(a, b):
+    if a < b:
+        raise ValueError
+    if b == 0:
+        raise ZeroDivisionError
+    return a / b
+
+data = {10: 2, 2: 5, "123": 4, 18: 0, 8: 4}
+for key in data:
+    try:
+        res = divider(key, data[key])
+        result.append(res)
+    except (ValueError, ZeroDivisionError, TypeError) as e:
+        print(f"Помилка типу {type(e).__name__}: {str(e)}")
+
+print(result)
